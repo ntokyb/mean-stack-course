@@ -1,0 +1,43 @@
+<h2>Post Create Component</h2>
+<mat-card>
+  <form (submit)="onAddPost(postCreateForm)" #postCreateForm="ngForm">
+  <mat-form-field appearance="fill"> 
+    <input 
+      matInput
+      placeholder="Post title" 
+      type="text"
+      name="title"
+      required
+      ngModel
+      #title="ngModel">
+    <mat-error *ngIf="title.invalid">Enter Title</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input 
+      placeholder="Short description"
+      matInput 
+      type="text" 
+      name="description"
+      required
+      ngModel
+      #description="ngModel">
+    <mat-error *ngIf="description.invalid">Enter description</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea 
+      matInput 
+      placeholder="Full post content"
+      cols="30" 
+      rows="10" 
+      name="content"
+      required
+      ngModel
+      #content="ngModel">
+      
+    </textarea>
+    <mat-error *ngIf="content.invalid">Enter full content</mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="accent" type="submit">Save Post</button>
+</form>
+</mat-card>
+<p>{{ newPost }}</p>
