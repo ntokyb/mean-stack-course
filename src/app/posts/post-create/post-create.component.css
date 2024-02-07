@@ -8,3 +8,7 @@ input,
 textarea {
   width: 100%;
 }
+
+mat-spinner {
+  margin: auto;
+}
